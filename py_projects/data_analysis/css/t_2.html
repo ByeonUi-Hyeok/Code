@@ -1,0 +1,82 @@
+
+<html>
+    
+    <head>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+
+    <body>
+            <!-- DOM => div.div.a.txt -->
+            <!-- 값뽑을때 DOM은 부모 자식간을.으로 표현한다. 디렉터리같이 -->
+
+
+
+
+       <!-- 하위2개의 차이점을 주기위해 속성값을 준다.-->
+       <div> hello python </div>
+       <div id='blueDiv'> 여기는 파란색 </div>
+
+
+           <div class='pinkC'>나는 핑크색</div>
+           <div class='pinkC'>나는 핑크색2</div>
+           <!-- id는 고유한 값이다 위처럼 2개의 다른 거에 같은 핑크를 주고 싶을때는 클래스를 사용하면 된다.-->
+
+               <p class='pinkC'>나는 핑크색2</p>
+               <p>문단</p>
+               <!-- p 태그는 문자를 감싸는 태그?-->
+               <!-- p : 문자열를 감싸는 태그(문단) -->
+                  
+                  <!-- 리스트 -->
+                  <ul>
+                     <li>1</li>
+                     <li>2</li>
+                     <li>3
+                        <ol>
+                           <li>a</li>
+                           <li>b</li>
+                        </ol>
+                     </li>
+                  </ul>
+       
+       <script>
+
+          
+         //모든요소 검정색 변경
+         $('*').css('color', 'black')
+         
+
+            $('div').css('color', 'red')
+         
+             // css selector 2번째 표현
+             // 문서상의 고유한(유일한 마크 지정 가능) : 속성 id 
+             // 표현 = > #아이디값   
+             $('#blueDiv').css('color', 'blue')
+               
+               // css selector 3번째
+               // 여러개를 동시에 특정할 수 있다. >리스트 (복수 동시에 이런표현 보통 리스트)
+               // 표현 = > .(닷)클래스값
+               $('.pinkC').css('color', 'pink')
+                    
+                    // css selector 4번째 표현
+                    // 조합 => 섞어서 표현
+                    // 문서상에 존재하는 모든 요소 중에 p요소를 찾는다
+                    // 그 중에 class값이 pinkC인 요소를 찾는다. 색깔 그레이
+                    // 모든 p => p
+                    // 중 클래스 pinkC = > pinkC
+                    $('p.pinkC').css('color', 'gray')
+
+                         // css selector 5번 째 표현
+                         // 열거 = > 콤마연산자 사용(1번, 2번, 3번, ... 등)으로 구분하여 표현
+                         $('div.pinkC, p').css('color', 'green')
+
+                              // css selector 6번 째 표현
+                              // 서열 
+                              //   직계서열 : 부모>직계자식
+                              //   후손     : 부모 후손(직계사식 포함) (부모와 후손사이 공백)
+                              $('ul>li').css('color', 'red')
+                              $('ul li').css('color', 'yellow')
+
+       </script>
+    </body>
+
+</html>
