@@ -1,0 +1,12 @@
+import account
+hong = account.Account('hong',20000)
+hong.deposit(2000)
+hong.deposit(100)
+hong.deposit(900)
+hong.withdraw(3000)
+hong.deposit(8000)
+hong.withdraw(80000)
+hong.deposit(5000)
+hong.display_info()
+print(hong)
+account.Account.get_account_num()
